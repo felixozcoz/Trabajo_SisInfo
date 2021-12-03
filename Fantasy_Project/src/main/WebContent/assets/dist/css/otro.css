@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+h2{
+    color: #150303;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    font-family: "Shippori Mincho",serif;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+#myLineupContainer{
+    display: grid;
+    grid-template-rows: auto auto;
+    /*border: 1px solid black;*/
+    padding-bottom: 100px;
+}
+
+#field{
+    background-color: white;
+}
+
+#myLineup{
+    width: 950px;
+    height: 860px;
+    margin: 10px auto 0;
+    position: relative;
+    background-size: contain;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background-image: url("https://cdn.biwenger.com/campaigns/partners/fields/nba.gif");
+}
+
+
+
+#myLineupStats{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.myLineupInfo{
+    text-align: center;
+    
+  
+    margin-top: 25%;
+    height: 200px;
+    max-width: 65%;
+    
+    background-color: lightskyblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.myLineupInfoHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e2f4e;
+    color: white;
+}
+
+.myLineupInfoContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-size: 30px;
+}
+
+
+.player{
+    width: 100px;
+    height: 100px;
+    /*background-color: #555;*/
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.player:hover {
+    text-decoration: underline;
+}
+
+.player-img {
+    position: relative;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0; 
+    vertical-align: middle;
+    text-align: center;
+}
+
+.player-info{
+    position: absolute;
+    top: 100%;
+    width: 120px;
+    left: -24px;
+    margin: 0 auto;
+    display: inline-block;
+    background: rgba(0,0,0,.3);
+    text-shadow: 1px 1px #333;
+    font-size: 12px;
+    border-radius: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 11px;
+    padding-right: 9px;
+    text-align: center;
+    min-width: 75px;
+    max-width: 100%;
+    height: 23px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+#player1 {
+    left: 484px;
+    bottom: 148px;   
+}
+/*
+#info-player1 {
+    position: absolute;
+    top: 100%;
+    width: 120px;
+    left: -24px;
+    margin: 0 auto;
+    display: inline-block;
+    background: rgba(0,0,0,.3);
+    text-shadow: 1px 1px #333;
+    font-size: 12px;
+    border-radius: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 11px;
+    padding-right: 9px;
+    text-align: center;
+    min-width: 75px;
+    max-width: 100%;
+    height: 23px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+*/
+#player2 {
+    left: 128px;
+    bottom: 148px;  
+}
+#player3 {
+    left: 484px;
+    bottom: 352px; 
+}
+#player4 {
+    left: 128px;
+    bottom: 352px;
+}
+#player5 {
+    left: 306px;
+    bottom: 560px; 
+}
+#player6 {
+    left: 781.25px;
+    bottom: 696.6px;   
+}
+#player7 {
+    left: 781.25px;
+    bottom: 533.2px;
+}
+#player8 {
+    left: 781.25px;
+    bottom: 369.8px;
+}
+#player9 {
+    left: 781.25px;
+    bottom: 206.4px;
+}
+#player10 {
+    left: 781.25px;
+    bottom: 43px;
+}
+
+
+#overlayChangePlayers{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+#modalChangePlayers{
+    position: absolute;
+    height: 553px;
+    width: 420px;
+
+    border-radius: 5px;
+    outline: 0;
+    /*
+    min-height: 150px;
+    max-height: calc(100vh - 60px);
+    max-width: 90vw;
+    */
+    z-index: 11;
+    background: white;
+
+    /*Center in middle*/
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+}
+
+#modalChangePlayersHeader{
+    font-family: open sans,system-ui,helvetica neue,Helvetica,Arial,sans-serif;
+    color: #6a6c6f;
+    font-size: 13px;
+}
+
+#playerFilter {
+    max-width: 100px;
+    margin: 0;
+    padding: 5px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.modalChangePlayersBodyPlayer{
+    display: flex;
+    /*justify-content: space-evenly;*/
+    margin-top: 25px;
+    margin-bottom: 5px;
+
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.playerPosition{
+    background: rgb(16, 175, 0) none repeat scroll 0% 0%;
+    border-radius: 50%;
+    min-width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+.teamLogo{
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.playerImg{
+    text-align: center;
+    overflow: hidden;
+    max-width: none;
+    position: relative;
+    max-width: 65px;
+    max-height: 65px;
+    margin: 0;
+    vertical-align: middle;
+
+    margin-left: 25px;
+}
+
+.modalChangePlayersBodyMyPlayerDiv1{
+    margin-left: 10px;
+}
+
+.modalChangePlayersBodyMyPlayerDiv2{
+    margin-left: 20px;
+}
+#backgroundOverlay{
+    background-color:transparent;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:block;
+}
