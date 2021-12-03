@@ -57,7 +57,7 @@
                     </div>
                     <div id="player10" class="player">10
                         <img class="player-img" id="player-img10" src="<%=team.get(9).getCamiseta()%>">
-                        <div class="player-info" id="info-player10" value=""><%=team.get(9).getNombre()%></div>
+                        <div class="player-info" id="info-player10"><%=team.get(9).getNombre()%></div>
                     </div>
                 </div>
             </div>  
@@ -110,12 +110,12 @@
                 </div>
                 <div class="modalChangePlayersBodyPlayer">
                     <div class="modalChangePlayersBodyMyPlayerDiv1">
-                        <img class="teamLogo" src="https://cdn.biwenger.com/i/t/207.png">
-                        <p class="playerPosition">F</p>
+                        <img class="teamLogo" id="teamLogo2" src="">
+                        <p class="playerPosition" id="playerPosition2"></p>
                     </div>
-                    <img class="playerImg" src="https://cdn.biwenger.com/i/j/185.png">
+                    <img class="playerImg" id="playerImg2" src="">
                     <div class="modalChangePlayersBodyMyPlayerDiv2">
-                        <p class="playerName">Nombre: Stephen Curry</p>
+                        <p class="playerName" id="playerName2"></p>
                         <p class="playerPrice">Precio: </p>
                         <p class="playerPoints">Puntos: </p>
                     </div>

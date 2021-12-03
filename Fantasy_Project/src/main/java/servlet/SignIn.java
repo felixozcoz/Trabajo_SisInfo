@@ -37,19 +37,12 @@ public class SignIn extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.setContentType("application/json");
-		//response.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("inputEmailNameSI");
 		String password = request.getParameter("inputPasswordSI");
-		
-		//Gson gson = new Gson();
-		//String json = "klk";
 		
 		try {
 			if (UsuarioDAO.validateUser(email, password)) { // OK
 				Vector<PlantillaVO> myteam = PlantillaDAO.getMyTeam(email);
-				//json = gson.toJson(myteam);
-				//response.getWriter().write(json);
 				request.getSession().setAttribute("myteam",myteam); 
 				request.getRequestDispatcher("plantilla.jsp").forward(request, response);
 			}

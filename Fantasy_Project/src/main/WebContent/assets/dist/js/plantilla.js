@@ -60,6 +60,11 @@ window.onload = function(){
 					document.getElementById('playerPosition1').innerHTML = pos[0];
 					document.getElementById('playerName1').innerHTML = data[0].Nombre;
 					document.getElementById('playerImg1').setAttribute('src',data[0].Camiseta);
+					
+					document.getElementById('teamLogo2').setAttribute('src',data[1].Escudo);
+					document.getElementById('playerPosition2').innerHTML = pos[1];
+					document.getElementById('playerName2').innerHTML = data[1].Nombre;
+					document.getElementById('playerImg2').setAttribute('src',data[1].Camiseta);
 				},
 				error: function(){
 					alert("Fallo ajax")
